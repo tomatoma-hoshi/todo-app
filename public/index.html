@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo リスト</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>📋 Todo リスト</h1>
+      <div id="connection-status" class="status disconnected">接続中...</div>
+    </header>
+
+    <div id="add-task-bar">
+      <input type="text" id="new-task-input" placeholder="新しいタスクを追加..." autocomplete="off">
+      <button id="add-task-btn">追加</button>
+    </div>
+
+    <div id="task-list"></div>
+  </div>
+
+  <!-- Task Edit Modal -->
+  <div id="modal-overlay" class="hidden">
+    <div id="modal">
+      <div id="modal-header">
+        <h2 id="modal-title">タスクを編集</h2>
+        <button id="modal-close">✕</button>
+      </div>
+      <div id="modal-body">
+        <label>タイトル
+          <input type="text" id="edit-title">
+        </label>
+        <label>説明
+          <textarea id="edit-description" rows="3"></textarea>
+        </label>
+        <div id="linked-tasks-section">
+          <h3>関連タスク</h3>
+          <div id="linked-tasks-list"></div>
+          <div id="link-task-picker">
+            <select id="link-task-select">
+              <option value="">タスクを選択してリンク...</option>
+            </select>
+            <button id="add-link-btn">リンク追加</button>
+          </div>
+        </div>
+        <div id="modal-actions">
+          <button id="save-task-btn" class="btn-primary">保存</button>
+          <button id="delete-task-btn" class="btn-danger">削除</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
